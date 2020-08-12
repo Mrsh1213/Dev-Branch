@@ -1,0 +1,32 @@
+/*.fc-icon-chevron-right:before {*/
+/*    content: "";*/
+/*}*/
+
+/*.fc-icon-chevron-left:before {*/
+/*    content: "";*/
+/*}*/
+
+.fc-toolbar-chunk .fc-toolbar-title {
+    font-size: 1.8em;
+}
+
+@media screen and (max-width: 960px) {
+    .fc-toolbar-chunk .fc-toolbar-title {
+        font-size: 0.9em;
+    }
+}
+.fc-view-harness-active {
+    height: 69vh;
+}
+
+/*.fc-event, .fc-event-dot {*/
+/*    background-color: #2c3e50;*/
+/*    padding: 4px !important;*/
+/*}*/
+/*.fc-event:hover, .fc-event-dot:hover {*/
+/*    background-color: #76828e;*/
+/*    padding: 4px !important;*/
+/*}*/
+.fc .fc-daygrid-event {
+    background-color: #b1b1b11c;
+}

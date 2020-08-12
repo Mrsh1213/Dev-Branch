@@ -1,0 +1,25 @@
+{
+  "short_name": "Dev Ops",
+  "name": "Dev Ops Publisher",
+  "icons": [
+    {
+      "src": "/icons8-connect-64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/icons8-connect-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/icons8-connect-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./dashboard",
+  "display": "standalone",
+  "theme_color": "#36458b",
+  "background_color": "#36458b"
+}

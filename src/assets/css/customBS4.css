@@ -1,0 +1,15 @@
+button:focus {
+    outline: none;
+}
+
+a {
+    /* color: #007bff; */
+    text-decoration: none !important;
+}
+.badge {
+    font-size: 85% !important;
+}
+.badge-secondary {
+    color: #fff;
+    background-color: #8d1780;
+}
