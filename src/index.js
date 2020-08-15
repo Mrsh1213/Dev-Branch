@@ -5,12 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {ThemeProvider} from "@material-ui/styles";
 import {create} from 'jss';
-import theme from "./config/theme";
+import theme from "./config/themeMain";
 import {jssPreset, makeStyles, StylesProvider} from '@material-ui/core/styles'
 import rtl from 'jss-rtl';
 
 const jss = create({plugins: [...jssPreset().plugins, rtl()]});
-const store = createStore(rootReducer);
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>
