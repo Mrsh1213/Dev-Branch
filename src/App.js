@@ -42,7 +42,7 @@ export default function App() {
             }} maxSnack={5}>
             <Router>
                 <Route exact path={"/demo"} component={Demo}/>
-                <Route path={"/post"} component={PostPage}/>
+                <Route path={"/dashboard/project/wikiProject"} component={PostPage}/>
 
             </Router>
         </SnackbarProvider>
