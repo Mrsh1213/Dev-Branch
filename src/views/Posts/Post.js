@@ -9,7 +9,13 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-
+import Collapse from '@material-ui/core/Collapse';
+import clsx from 'clsx';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MessageIcon from '@material-ui/icons/Message';
+import Grid from "@material-ui/core/Grid";
+import Comment from "./Comment";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -66,8 +72,9 @@ const useStyles = makeStyles((theme) => ({
         },
 
     expand: {
+        float: "left",
         transform: 'rotate(0deg)',
-        marginLeft: 'auto',
+        // marginLeft: 'auto',
         transition: theme.transitions.create('transform', {
             duration: theme.transitions.duration.shortest,
         }),
@@ -79,7 +86,12 @@ const useStyles = makeStyles((theme) => ({
 
 function Post(props) {
     const classes = useStyles();
-    const {content, title, creator, picture} = props;
+    const {content, title, creator, picture, comments} = props;
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
     var parse = require('html-react-parser');
 
 
@@ -124,7 +136,38 @@ function Post(props) {
                 <IconButton aria-label="share">
                     <ShareIcon/>
                 </IconButton>
+                <IconButton
+                    className={clsx(classes.expand, {
+                        [classes.expandOpen]: expanded,
+                    })}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                >
+                    <MessageIcon/>
+                </IconButton>
             </CardActions>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                    <Grid xs={12} item>
+
+                        {comments.map(comment => {
+                            return (<Grid  key={comment.content} item xs={12} lg={3}>
+                                <Comment content={comment.content} creator={comment.creator}/>
+                            </Grid>)
+                        })}
+
+
+                        {/*<Grid direction={"row-reverse"} className={classes.footer} item>*/}
+
+                        {/*    <Fab onClick={() => history.push("/dashboard/project/wikiProject/createPost")} color="secondary"*/}
+                        {/*         aria-label="add" className={classes.fabButton}>*/}
+                        {/*        <AddIcon/>*/}
+                        {/*    </Fab>*/}
+                        {/*</Grid>*/}
+                    </Grid>
+                </CardContent>
+            </Collapse>
         </Card>
 
     );

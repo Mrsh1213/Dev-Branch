@@ -1,7 +1,7 @@
 import Grid from '@material-ui/core/Grid';
 import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
-import Post from './Post';
+import Comment from './Comment';
 import {makeStyles} from '@material-ui/core/styles';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import {
@@ -72,7 +72,7 @@ const useStyles = makeStyles({
 
 
 function PostsList(props) {
-    const {posts} = props;
+    const {comments} = props;
     const classes = useStyles();
     const history = useHistory();
 
@@ -80,24 +80,23 @@ function PostsList(props) {
     return (
         <Grid justify={"flex-end"} container>
 
-            {posts.map(post => {
-                return (<Grid className={classes.postClass} key={post.title} item xs={12} lg={3}>
-                    <Post title={post.title} creator={post.creator}
-                          content={post.content} picture={post.picture} comments={post.comments}/>
+            {comments.map(comment => {
+                return (<Grid className={classes.commentClass} key={comment.content} item xs={12} lg={3}>
+                    <Comment content={comment.content} creator={comment.creator} />
                 </Grid>)
             })}
 
 
-            <Grid direction={"row-reverse"} className={classes.footer} item>
+            {/*<Grid direction={"row-reverse"} className={classes.footer} item>*/}
 
-                <Fab onClick={() => history.push("/dashboard/project/wikiProject/createPost")} color="secondary"
-                     aria-label="add" className={classes.fabButton}>
-                    <AddIcon/>
-                </Fab>
-            </Grid>
+            {/*    <Fab onClick={() => history.push("/dashboard/project/wikiProject/createPost")} color="secondary"*/}
+            {/*         aria-label="add" className={classes.fabButton}>*/}
+            {/*        <AddIcon/>*/}
+            {/*    </Fab>*/}
+            {/*</Grid>*/}
         </Grid>
 
     );
 }
 
-export default PostsList;
+export default CommentsList;

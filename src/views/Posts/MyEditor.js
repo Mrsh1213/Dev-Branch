@@ -19,7 +19,6 @@ const useStyles = makeStyles({
         float: "left",
     },
 
-
     titleClass: {
         width: "99%",
         margin: "7.5px 5px 7px 3px",
@@ -62,6 +61,11 @@ const useStyles = makeStyles({
             margin: "0 0px 0 3px",
             width: "65%"
         },
+
+    uploader:
+        {
+            width:"100%"
+        }
 
 });
 
@@ -147,6 +151,7 @@ function MyEditor(props) {
                     onChange={onDrop}
                     imgExtension={[".jpg", ".gif", ".png", ".gif"]}
                     maxFileSize={5242880}
+                    className={classes.uploader}
                 />
 
             </Grid>

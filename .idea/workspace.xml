@@ -6,23 +6,19 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35f9419e-b680-4afc-84ed-adce0b2b9842" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Posts/Comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Posts/CommentsList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/Post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Posts/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/PostList.js" afterDir="false" />
@@ -54,18 +50,6 @@
       <recent name="C:\Users\m.shabiri\Desktop\Dev-Branch\src\views\Posts" />
     </key>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -88,13 +72,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597310206102">
@@ -105,9 +88,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1597646653462" />
-    <state x="379" y="89" key="search.everywhere.popup" timestamp="1597310138285">
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1597649325965">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1597310138285" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1597649325965" />
   </component>
 </project>
