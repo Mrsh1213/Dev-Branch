@@ -16,12 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35f9419e-b680-4afc-84ed-adce0b2b9842" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/Posts/Comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Posts/CommentsList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Posts/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/Comment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/PostList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Posts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +28,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
   </component>
   <component name="ProjectId" id="1g2QBD5qyoqHJXz2sHGarwGHspM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -44,6 +44,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/Posts" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -55,12 +56,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="30f2382b-7dea-4857-997b-fa23de20cce5" name="Default Changelist" comment="" />
+      <changelist id="35f9419e-b680-4afc-84ed-adce0b2b9842" name="Default Changelist" comment="" />
       <created>1597310069303</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597310069303</updated>
       <workItem from="1597310073571" duration="176000" />
+      <workItem from="1597743988631" duration="33000" />
+      <workItem from="1597767957706" duration="3278000" />
     </task>
     <servers />
   </component>
@@ -88,6 +91,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1597646653462" />
+    <state x="205" y="31" key="SettingsEditor" timestamp="1597744050056">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="205" y="31" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1597744050056" />
+    <state x="559" y="298" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597768028138">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="559" y="298" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1597768028138" />
     <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1597649325965">
       <screen x="67" y="27" width="1299" height="741" />
     </state>

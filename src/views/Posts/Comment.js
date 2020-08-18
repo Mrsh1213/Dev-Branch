@@ -7,21 +7,23 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import IconButton from "@material-ui/core/IconButton";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteOutlinedIcon from "@material-ui/icons/FavoriteOutlined";
 import ShareIcon from "@material-ui/icons/Share";
 import {makeStyles} from '@material-ui/core/styles';
 import clsx from "clsx";
 import MessageIcon from "@material-ui/icons/Message";
 import Collapse from "@material-ui/core/Collapse";
 import Grid from "@material-ui/core/Grid";
-
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import CommentIcon from '@material-ui/icons/Comment';
 
 const useStyles = makeStyles({
     root: {
-        width:"110%",
-        margin:"-15px 0 0 -18px",
+        width:"100%",
+        margin:"-5px 0 0 0",
         float:"left",
-        borderTopWidth: 2,
-        borderStyle: 'solid',
+        borderTopWidth: 0,
+        // borderStyle: 'solid',
         borderBottom:"0px",
         borderRight:"0px",
         borderLeft:"0px",
@@ -33,17 +35,17 @@ const useStyles = makeStyles({
     // },
     avatar: {
         backgroundColor: "black",
-        margin: "-5px -10px 0 0",
-        width: "35px",
-        height: "35px",
+        margin: "-10px -10px 0 0",
+        width: "32px",
+        height: "32px",
 
     },
     content:
         {
-            margin: "-25px 7.5px 0 0",
+            margin: "-27px 0px 0 0",
             color: "black",
             fontWeight: "400",
-            fontSize: "15px",
+            fontSize: "14px",
         },
     collapseContent:
         {
@@ -54,9 +56,9 @@ const useStyles = makeStyles({
         },
     title:
         {
-            fontSize: "15px",
-            fontWeight: "400",
-            margin: "-8.5px 0px 0 0",
+            fontSize: "13.5px",
+            fontWeight: "600",
+            margin: "-13.5px 0px 0 -2px",
             fontFamily: "IRANSans"
 
         },
@@ -69,7 +71,7 @@ const useStyles = makeStyles({
     //     },
     actionsList:
         {
-             margin: "-30px 0px 0 -5px",
+             margin: "-30px 0px -9px -5px",
         },
 
 });
@@ -84,7 +86,8 @@ function Comment(props) {
 
 
     return (
-        <Card variant="outlined" key={content} className={classes.root}>
+    <Grid>
+         <Card variant="outlined" key={content} className={classes.root}>
             <CardHeader
                 classes={{
                     title: classes.title,
@@ -105,14 +108,14 @@ function Comment(props) {
                 </div>
             </CardContent>
             <CardActions className={classes.actionsList} disableSpacing>
-                <IconButton style={{ fontSize: "10px" }} aria-label="add to favorites">
-                    <FavoriteIcon/>
+                <IconButton  aria-label="add to favorites">
+                    <FavoriteBorderOutlinedIcon style={{ fontSize: 20 }}/>
                 </IconButton>
-                <IconButton style={{ fontSize: "10px" }} aria-label="share">
-                    <ShareIcon/>
-                </IconButton>
+              
             </CardActions>
-        </Card>
+         </Card>
+    </Grid>
+
 
     );
 }

@@ -13,22 +13,41 @@ function Index() {
     const content2 = "<p>محتوای دومین پست محتوای دومین پست من محتوای دومین پست من محتوای دومین پست</p>";
     const [posts, setPosts] = useState(
         [
-            {content: content1, title: "عنوان اول", creator: creatorName, picture: 1,
-                comments:[{creator:"محمد",content:"عالی"},{creator:"رضا",content:"خیلی خوب"}] },
-            {content: content2, title: "عنوان دوم", creator: creatorName, picture: null,
-                comments:[{creator:"محمد",content:"عالی"},{creator:"رضا",content:"خیلی خوب"}]},
-            {content: content1, title: "عنوان سوم", creator: creatorName, picture: 1,
-                comments:[{creator:"محمد",content:"عالی"},{creator:"رضا",content:"خیلی خوب"}]},
-            {content: content2, title: "عنوان چهارم", creator: creatorName, picture: null,
-                comments:[{creator:"محمد",content:"عالی"},{creator:"رضا",content:"خیلی خوب"}]},
-            {content: content1, title: "عنوان پنجم", creator: creatorName, picture: 1,
-                comments:[{creator:"محمد",content:"عالی"},{creator:"رضا",content:"خیلی خوب"}]},
-            {content: content2, title: "عنوان ششم", creator: creatorName, picture: null,
-                comments:[{creator:"محمد",content:"عالی"},{creator:"رضا",content:"خیلی خوب"}]},
-            {content: content1, title: "عنوان هفتم", creator: creatorName, picture: 1,
-                comments:[{creator:"محمد",content:"عالی"},{creator:"رضا",content:"خیلی خوب"}]},
-            {content: content2, title: "عنوان هشتم", creator: creatorName, picture: null,
-                comments:[{creator:"محمد",content:"عالی"},{creator:"رضا",content:"خیلی خوب"}]},
+            {
+                content: content1, title: "عنوان اول", creator: creatorName, picture: 1,
+                comments: [{
+                    creator: "محمد",
+                    content: "عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی عالی "
+                }, {creator: "رضا", content: "خیلی خوب"}]
+            },
+            {
+                content: content2, title: "عنوان دوم", creator: creatorName, picture: null,
+                comments: [{creator: "محمد", content: "عالی"}, {creator: "رضا", content: "خیلی خوب"}]
+            },
+            {
+                content: content1, title: "عنوان سوم", creator: creatorName, picture: 1,
+                comments: [{creator: "محمد", content: "عالی"}, {creator: "رضا", content: "خیلی خوب"}]
+            },
+            {
+                content: content2, title: "عنوان چهارم", creator: creatorName, picture: null,
+                comments: [{creator: "محمد", content: "عالی"}, {creator: "رضا", content: "خیلی خوب"}]
+            },
+            {
+                content: content1, title: "عنوان پنجم", creator: creatorName, picture: 1,
+                comments: [{creator: "محمد", content: "عالی"}, {creator: "رضا", content: "خیلی خوب"}]
+            },
+            {
+                content: content2, title: "عنوان ششم", creator: creatorName, picture: null,
+                comments: [{creator: "محمد", content: "عالی"}, {creator: "رضا", content: "خیلی خوب"}]
+            },
+            {
+                content: content1, title: "عنوان هفتم", creator: creatorName, picture: 1,
+                comments: [{creator: "محمد", content: "عالی"}, {creator: "رضا", content: "خیلی خوب"}]
+            },
+            {
+                content: content2, title: "عنوان هشتم", creator: creatorName, picture: null,
+                comments: [{creator: "محمد", content: "عالی"}, {creator: "رضا", content: "خیلی خوب"}]
+            },
         ]
     );
 

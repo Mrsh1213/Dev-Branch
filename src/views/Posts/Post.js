@@ -16,27 +16,38 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MessageIcon from '@material-ui/icons/Message';
 import Grid from "@material-ui/core/Grid";
 import Comment from "./Comment";
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
 
 const useStyles = makeStyles((theme) => ({
 
 
     root: {
-        margin: "-6px 0 0 0",
-        zIndex: 10
+        margin: "0px 0 0 0",
+        width:"99/5%",
+        float:"left",
+        borderBottomWidth:2,
+        borderTopWidth: 0,
+        borderStyle: 'solid',
+        borderRight:"0px",
+        borderLeft:"0px",
 
     },
     media: {
-        height: 0,
-        paddingTop: '60%',
-        margin: "-6.5px 10px 20px 10px", // 16:9
+        paddingTop: '100%',
+        margin: "7.5px 0px 7.5px 0px", // 16:9
     },
     avatar: {
         backgroundColor: "#B3AFAF",
-        margin: "-10px -10px 0 0",
+        margin: "-10px 0px 0 0",
         width: "50px",
         height: "50px",
 
     },
+    // cardContentClass:
+    //     {
+    //       width:"100%"
+    //     },
     content:
         {
             margin: "-30px 0 0 0",
@@ -55,26 +66,26 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "16px",
             fontStyle: "bold",
             fontWeight: "450",
-            margin: "-8.5px 0px 0 0",
+            margin: "-8.5px 0px 0 -8px",
             fontFamily: "IRANSans"
 
         },
     subheader:
         {
             fontSize: "16px",
-            margin: "-3.5px 0px 0 0",
+            margin: "-3.5px 0px 0 -8px",
             fontFamily: "IRANSans"
 
         },
     actionsList:
         {
-            margin: "-42px -5px 0 0",
+            margin: "-39px 0px 0 -5px",
         },
 
     expand: {
         float: "left",
         transform: 'rotate(0deg)',
-        // marginLeft: 'auto',
+        //marginLeft: 'auto',
         transition: theme.transitions.create('transform', {
             duration: theme.transitions.duration.shortest,
         }),
@@ -107,7 +118,7 @@ function Post(props) {
 
 
     return (
-        <Card key={title} className={classes.root}>
+        <Card variant="outlined" key={title} className={classes.root}>
 
             <CardHeader
                 classes={{
@@ -122,8 +133,9 @@ function Post(props) {
 
                 subheader={creator}
             />
-            {media}
+
             <CardContent xs={12} className={classes.content}>
+                {media}
                 <div dangerouslySetInnerHTML={{
                     __html: content
                 }} color="textSecondary" component="p">
@@ -131,10 +143,10 @@ function Post(props) {
             </CardContent>
             <CardActions className={classes.actionsList} disableSpacing>
                 <IconButton aria-label="add to favorites">
-                    <FavoriteIcon/>
+                    <FavoriteBorderOutlinedIcon style={{ fontSize: 25 }}/>
                 </IconButton>
                 <IconButton aria-label="share">
-                    <ShareIcon/>
+                    <ShareIcon style={{ fontSize: 25 }}/>
                 </IconButton>
                 <IconButton
                     className={clsx(classes.expand, {
@@ -144,17 +156,18 @@ function Post(props) {
                     aria-expanded={expanded}
                     aria-label="show more"
                 >
-                    <MessageIcon/>
+                    <MessageOutlinedIcon style={{ fontSize: 25 }}/>
                 </IconButton>
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                    <Grid xs={12} item>
+
+
+                    {/*<Grid xs={12} item>*/}
 
                         {comments.map(comment => {
-                            return (<Grid  key={comment.content} item xs={12} lg={3}>
+                            return (
                                 <Comment content={comment.content} creator={comment.creator}/>
-                            </Grid>)
+                            )
                         })}
 
 
@@ -165,8 +178,9 @@ function Post(props) {
                         {/*        <AddIcon/>*/}
                         {/*    </Fab>*/}
                         {/*</Grid>*/}
-                    </Grid>
-                </CardContent>
+                    {/*</Grid>*/}
+
+
             </Collapse>
         </Card>
 
