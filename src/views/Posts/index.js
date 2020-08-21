@@ -2,11 +2,12 @@ import React, {Fragment} from 'react';
 import {useState} from "react";
 import PostList from "./PostList";
 import {
+    useParams,
     Switch,
     Route,
 } from "react-router-dom";
 import MyEditor from './MyEditor';
-
+import PostPage from "./PostPage";
 function Index() {
     const creatorName = "محمد";
     const content1 = "<p>محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست</p>";
@@ -60,12 +61,35 @@ function Index() {
         setPosts(posts);
     }
 
+    const findObj = (title)=>
+    {
+        let post=posts.find(o => o.title === title);
+        return post;
+        
+    }
+
 
     return (<Switch>
-        <Route exact path="/dashboard/project/wikiProject" component={() => <PostList posts={posts}/>}/>
-        <Route path="/dashboard/project/wikiProject/createPost" component={() => <MyEditor createPost={createPost}/>}/>
+        <Route exact path="/dashboard/project/wikiProject" 
+        component={() => <PostList posts={posts}/>}/>
+
+        <Route path="/dashboard/project/wikiProject/createPost" 
+        component={() => <MyEditor createPost={createPost}/>}/>
+
+        <Route path="/dashboard/project/wikiProject/post/:title" 
+        children={<Child findObj={findObj}/>}
+        />
 
     </Switch>)
+}
+
+function Child(props)
+{
+    const {findObj}=props;
+    let {title}=useParams();
+    let post=findObj(title);
+    return <PostPage post={post} />;
+
 }
 
 export default Index;

@@ -88,6 +88,7 @@ function Comment(props) {
     return (
     <Grid>
          <Card variant="outlined" key={content} className={classes.root}>
+         
             <CardHeader
                 classes={{
                     title: classes.title,
@@ -113,6 +114,7 @@ function Comment(props) {
                 </IconButton>
               
             </CardActions>
+
          </Card>
     </Grid>
 

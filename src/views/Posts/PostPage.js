@@ -1,5 +1,6 @@
 import Card from '@material-ui/core/Card' ;
 import React, {useState} from 'react';
+import {Fragment} from "react";
 import {makeStyles} from '@material-ui/core/styles';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -16,16 +17,26 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MessageIcon from '@material-ui/icons/Message';
 import Grid from "@material-ui/core/Grid";
 import Comment from "./Comment";
-import PostPage from "./PostPage";
-
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
 import {useHistory} from "react-router";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import MenuIcon from '@material-ui/icons/Menu';
+import Button from '@material-ui/core/Button';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Divider from '@material-ui/core/Divider';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import TextField from '@material-ui/core/TextField';
+import Modal from '@material-ui/core/Modal';
+
 const useStyles = makeStyles((theme) => ({
 
 
     root: {
-        margin: "0px 0 0 0",
+        margin: "53px 0 0 0",
         width:"99/5%",
         float:"left",
         borderBottomWidth:2,
@@ -33,12 +44,13 @@ const useStyles = makeStyles((theme) => ({
         borderStyle: 'solid',
         borderRight:"0px",
         borderLeft:"0px",
-      
+        zIndex:0,
+
 
     },
     media: {
         paddingTop: '100%',
-        margin: "7.5px 0px 7.5px 0px", // 16:9
+        margin: "7.5px 0px 8.5px 0px", // 16:9
     },
     avatar: {
         backgroundColor: "#B3AFAF",
@@ -58,12 +70,7 @@ const useStyles = makeStyles((theme) => ({
             fontWeight: "400",
             fontSize: "17px",
         },
-    collapseContent:
-        {
-            margin: "-40px 0 0 0",
-            color: "black",
-            fontWeight: "400"
-        },
+   
     title:
         {
             fontSize: "16px",
@@ -73,6 +80,26 @@ const useStyles = makeStyles((theme) => ({
             fontFamily: "IRANSans"
 
         },
+        
+        menuButton: { 
+            marginLeft: 'auto',
+            marginTop:"-5px",
+            backgroundColor:"#ECE8E7",
+            padding:"5px"
+   
+               },
+  
+
+  appBarClass:{
+    boxShadow:"2px 0px 0px #9E9E9E",
+    backgroundColor:"white",
+classesolor:"gray",
+height:"50px"
+},
+  
+  toolBarClass:{
+  boxShadow:"0px",
+},
     subheader:
         {
             fontSize: "16px",
@@ -82,36 +109,75 @@ const useStyles = makeStyles((theme) => ({
         },
     actionsList:
         {
-            margin: "-39px 0px 0 -5px",
+            margin: "-39px 0px -20px -5px",
         },
+        hrClass:
+        {
 
-    expand: {
-        float: "left",
-        transform: 'rotate(0deg)',
-        //marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
+
+    // border-top: 3px double #333;
+    // color: #333;
+    // overflow: visible;
+    // text-align: center;
+    height: "25px",
+
+        },
+         paper: {
+    position: 'absolute',
+    width: "98%",
+    backgroundColor: theme.palette.background.paper,
+    border: '0px solid #000',
+    // boxShadow: theme.shadows[5],
+    // padding: theme.spacing(2, 4, 3),
+  },
+
+
 }));
 
-function Post(props) {
-    const classes = useStyles();
-    const {content, title, creator, picture, comments} = props;
-    const [expanded, setExpanded] = React.useState(false);
-    const history = useHistory();
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
+
+function getModalStyle() {
+  const top = 50 ;
+  const left = 50 ;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+
+function PostPage(props) {
+    const classes = useStyles();
+    const {post} = props;
+    const history = useHistory();
+    const [modalStyle] = React.useState(getModalStyle);
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpen = () => {
+    setOpen(true);
     };
+
+    const handleClose = () => {
+    setOpen(false);
+    };
+
+    const body = (
+    <div style={modalStyle} className={classes.paper}>
+      
+      <p id="simple-modal-description">
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+      </p>
+   
+    </div>
+  );
+
     var parse = require('html-react-parser');
 
 
     let media = null;
-    if (picture) {
+    if (post.picture) {
         media = <CardMedia
             className={classes.media}
             image="https://picsum.photos/200"
@@ -120,10 +186,23 @@ function Post(props) {
         />;
     }
 
-    let postLink="/dashboard/project/wikiProject/post/";
 
     return (
-        <Card variant="outlined" key={title} className={classes.root}>
+    <Fragment>
+       
+       <AppBar position="fixed" color="inherit" className={classes.appBarClass}>
+  <Toolbar  variant="regular" className={classes.toolBarClass}>
+    
+        <IconButton  onClick={()=>history.push("/dashboard/project/wikiProject/")} className={classes.menuButton} color="inherit" aria-label="menu">
+      <ArrowBackIcon />
+    </IconButton>
+    
+   
+  </Toolbar>
+</AppBar>
+
+
+        <Card variant="outlined" key={post.title} className={classes.root}>
 
             <CardHeader
                 classes={{
@@ -134,15 +213,15 @@ function Post(props) {
                     <Avatar aria-label="recipe" className={classes.avatar}>
                     </Avatar>
                 }
-                title={title}
+                title={post.title}
 
-                subheader={creator}
+                subheader={post.creator}
             />
 
             <CardContent xs={12} className={classes.content}>
                 {media}
                 <div dangerouslySetInnerHTML={{
-                    __html: content
+                    __html: post.content
                 }} color="textSecondary" component="p">
                 </div>
             </CardContent>
@@ -153,44 +232,38 @@ function Post(props) {
                 <IconButton aria-label="share">
                     <ShareIcon style={{ fontSize: 25 }}/>
                 </IconButton>
-
-                <IconButton
-                   
-                    onClick={()=>history.push("/dashboard/project/wikiProject/post/"+title)}
-                   
-                 
-                >
+                <IconButton onClick={handleOpen}>
                     <MessageOutlinedIcon style={{ fontSize: 25 }}/>
                 </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
 
+       <hr  color="#D7D1CF"/>
+        
 
-                    {/*<Grid xs={12} item>*/}
-
-                        {comments.map(comment => {
+                    {post.comments.map(comment => {
                             return (
                                 <Grid item xs={12} key={comment.content}>
                                 <Comment content={comment.content} creator={comment.creator}/>
                                 </Grid>
+
+
                             )
                         })}
 
-
-                        {/*<Grid direction={"row-reverse"} className={classes.footer} item>*/}
-
-                        {/*    <Fab onClick={() => history.push("/dashboard/project/wikiProject/createPost")} color="secondary"*/}
-                        {/*         aria-label="add" className={classes.fabButton}>*/}
-                        {/*        <AddIcon/>*/}
-                        {/*    </Fab>*/}
-                        {/*</Grid>*/}
-                    {/*</Grid>*/}
-
-
-            </Collapse>
+          
+          
         </Card>
+        <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
+       </Fragment>
 
-    );
+ );
 }
 
-export default Post;
+export default PostPage;

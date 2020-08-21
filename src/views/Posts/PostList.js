@@ -78,17 +78,17 @@ function PostsList(props) {
 
 
     return (
-        <Grid justify={"flex-end"} container>
+        <Grid justify={"flex-end"}  container direction="row">
 
             {posts.map(post => {
-                return (<Grid className={classes.postClass} key={post.title} item xs={12} lg={3}>
+                return (<Grid  className={classes.postClass} key={post.title} item xs={12} lg={3}>
                     <Post title={post.title} creator={post.creator}
                           content={post.content} picture={post.picture} comments={post.comments}/>
                 </Grid>)
             })}
 
 
-            <Grid direction={"row-reverse"} className={classes.footer} item>
+            <Grid  className={classes.footer} item>
 
                 <Fab onClick={() => history.push("/dashboard/project/wikiProject/createPost")} color="secondary"
                      aria-label="add" className={classes.fabButton}>
