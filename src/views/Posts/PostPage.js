@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 
     root: {
-        margin: "53px 0 0 0",
+        margin: "44px 0 0 0",
         width:"99/5%",
         float:"left",
         borderBottomWidth:2,
@@ -59,10 +59,14 @@ const useStyles = makeStyles((theme) => ({
         height: "50px",
 
     },
-    // cardContentClass:
-    //     {
-    //       width:"100%"
-    //     },
+    commentFormClass:
+        {
+        width:"95%",
+        float:"right",
+        marginRight:"8px",
+        padding:"10px 0px 0px 0px"
+
+        },
     content:
         {
             margin: "-30px 0 0 0",
@@ -83,18 +87,19 @@ const useStyles = makeStyles((theme) => ({
         
         menuButton: { 
             marginLeft: 'auto',
-            marginTop:"-5px",
+            marginTop:"-13px",
             backgroundColor:"#ECE8E7",
-            padding:"5px"
+            padding:"3.5px"
    
                },
   
 
   appBarClass:{
-    boxShadow:"2px 0px 0px #9E9E9E",
+    marginTop:"-2px",
+    boxShadow:"0px 0px 1.5px 0px #9E9E9E",
     backgroundColor:"white",
 classesolor:"gray",
-height:"50px"
+height:"43px"
 },
   
   toolBarClass:{
@@ -123,15 +128,47 @@ height:"50px"
 
         },
          paper: {
-    position: 'absolute',
-    width: "98%",
-    backgroundColor: theme.palette.background.paper,
+            float:"right",
+    width: "90%",
+    margin:"200px 20px 0px  0",
+    backgroundColor: "white",
     border: '0px solid #000',
     // boxShadow: theme.shadows[5],
     // padding: theme.spacing(2, 4, 3),
   },
+  wikiClass:
+  {
+    fontSize:"15.3px",
+    fontWeight:"600",
+    padding:"12px 10px 8px 0"
+  },
+  modalClass:
+  {
+    
+  },
+  buttonsClass:
+  {
+    width:"95%",
+    float:"right",
+        marginRight:"8px",
+        padding:"10px 0px"
+  },
+  confirmClass:
+  {
+    float:"right",
+    width:"60%",
+     backgroundColor: "#2E6E8E",
+        fontWeight: "600",
+        color:"white"
 
+  },
+  closeClass:
+  {
+    float:"left",
+    width:"25%",
+    fontWeight: "600",
 
+  }
 }));
 
 
@@ -150,10 +187,11 @@ function getModalStyle() {
 
 function PostPage(props) {
     const classes = useStyles();
-    const {post} = props;
+    const {post,createComment} = props;
     const history = useHistory();
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
+    const [commentContent,setCommentContent]=React.useState("");
 
     const handleOpen = () => {
     setOpen(true);
@@ -164,12 +202,14 @@ function PostPage(props) {
     };
 
     const body = (
-    <div style={modalStyle} className={classes.paper}>
+    <div className={classes.paper}>
       
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </p>
-   
+            <TextField onChange={(event)=>setCommentContent(event.target.value)} multiline rows={3} className={classes.commentFormClass} fullWidth={true} size="small" variant="outlined" placeholder="کامنت خود را بگذارید" />
+            <div className={classes.buttonsClass} >
+            <Button className={classes.confirmClass} onClick={()=>{if (commentContent===""){handleClose();return};createComment(commentContent,post.title);setCommentContent("");handleClose();}} color="default" variant="contained" >ثبت</Button>
+            <Button  className={classes.closeClass} onClick={()=>handleClose()} variant="contained" >بازگشت</Button>
+            </div>
+
     </div>
   );
 
@@ -192,7 +232,7 @@ function PostPage(props) {
        
        <AppBar position="fixed" color="inherit" className={classes.appBarClass}>
   <Toolbar  variant="regular" className={classes.toolBarClass}>
-    
+    <p className={classes.wikiClass}>ویکی</p>
         <IconButton  onClick={()=>history.push("/dashboard/project/wikiProject/")} className={classes.menuButton} color="inherit" aria-label="menu">
       <ArrowBackIcon />
     </IconButton>
@@ -238,7 +278,7 @@ function PostPage(props) {
             </CardActions>
 
        <hr  color="#D7D1CF"/>
-        
+       
 
                     {post.comments.map(comment => {
                             return (
@@ -250,8 +290,8 @@ function PostPage(props) {
                             )
                         })}
 
-          
-          
+        
+
         </Card>
         <Modal
         open={open}

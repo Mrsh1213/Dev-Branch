@@ -52,7 +52,12 @@ function Index() {
         ]
     );
 
+    const createComment=(content,title)=>{
+        let post=posts.find(o => o.title === title);
+        post.comments.unshift({creator:"شخص",content:content});
+          setPosts(posts);
 
+    }
     const createPost = (title, content, picture) => {
         posts.unshift({
             content: content, title: title,
@@ -77,7 +82,7 @@ function Index() {
         component={() => <MyEditor createPost={createPost}/>}/>
 
         <Route path="/dashboard/project/wikiProject/post/:title" 
-        children={<Child findObj={findObj}/>}
+        children={<Child findObj={findObj} createComment={createComment}/>}
         />
 
     </Switch>)
@@ -85,10 +90,10 @@ function Index() {
 
 function Child(props)
 {
-    const {findObj}=props;
+    const {findObj,createComment}=props;
     let {title}=useParams();
     let post=findObj(title);
-    return <PostPage post={post} />;
+    return <PostPage createComment={createComment} post={post} />;
 
 }
 
