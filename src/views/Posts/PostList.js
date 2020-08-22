@@ -83,7 +83,7 @@ function PostsList(props) {
             {posts.map(post => {
                 return (<Grid  className={classes.postClass} key={post.title} item xs={12} lg={3}>
                     <Post title={post.title} creator={post.creator}
-                          content={post.content} picture={post.picture} comments={post.comments}/>
+                          content={post.content} picture={post.picture} />
                 </Grid>)
             })}
 

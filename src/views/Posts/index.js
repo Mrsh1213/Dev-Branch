@@ -47,7 +47,7 @@ function Index() {
             },
             {
                 content: content2, title: "عنوان هشتم", creator: creatorName, picture: null,
-                comments: [{creator: "محمد", content: "عالی"}, {creator: "رضا", content: "خیلی خوب"}]
+                comments: []
             },
         ]
     );
@@ -60,8 +60,10 @@ function Index() {
     }
     const createPost = (title, content, picture) => {
         posts.unshift({
-            content: content, title: title,
-            creator: creatorName, picture: picture
+            content: content,
+             title: title,
+            creator: creatorName, picture: picture,
+            comments:[{creator:"ممد",content:"ممدم"}]
         });
         setPosts(posts);
     }

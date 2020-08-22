@@ -26,8 +26,9 @@ const useStyles = makeStyles((theme) => ({
 
     root: {
         margin: "0px 0 0 0",
-        width:"99/5%",
-        float:"left",
+        width:"99%",
+        float:"right",
+        marginRight:"2px",
         borderBottomWidth:2,
         borderTopWidth: 0,
         borderStyle: 'solid',
@@ -85,28 +86,15 @@ const useStyles = makeStyles((theme) => ({
             margin: "-39px 0px 0 -5px",
         },
 
-    expand: {
-        float: "left",
-        transform: 'rotate(0deg)',
-        //marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
+   
 }));
 
 function Post(props) {
     const classes = useStyles();
-    const {content, title, creator, picture, comments} = props;
-    const [expanded, setExpanded] = React.useState(false);
+    const {content, title, creator, picture} = props;
     const history = useHistory();
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+
     var parse = require('html-react-parser');
 
 
@@ -163,31 +151,7 @@ function Post(props) {
                     <MessageOutlinedIcon style={{ fontSize: 25 }}/>
                 </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-
-
-                    {/*<Grid xs={12} item>*/}
-
-                        {comments.map(comment => {
-                            return (
-                                <Grid item xs={12} key={comment.content}>
-                                <Comment content={comment.content} creator={comment.creator}/>
-                                </Grid>
-                            )
-                        })}
-
-
-                        {/*<Grid direction={"row-reverse"} className={classes.footer} item>*/}
-
-                        {/*    <Fab onClick={() => history.push("/dashboard/project/wikiProject/createPost")} color="secondary"*/}
-                        {/*         aria-label="add" className={classes.fabButton}>*/}
-                        {/*        <AddIcon/>*/}
-                        {/*    </Fab>*/}
-                        {/*</Grid>*/}
-                    {/*</Grid>*/}
-
-
-            </Collapse>
+           
         </Card>
 
     );

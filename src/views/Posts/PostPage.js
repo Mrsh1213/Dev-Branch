@@ -37,8 +37,9 @@ const useStyles = makeStyles((theme) => ({
 
     root: {
         margin: "44px 0 0 0",
-        width:"99/5%",
-        float:"left",
+        width:"99%",
+        float:"right",
+        marginRight:"2px",
         borderBottomWidth:2,
         borderTopWidth: 0,
         borderStyle: 'solid',
@@ -96,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
 
   appBarClass:{
     marginTop:"-2px",
-    boxShadow:"0px 0px 1.5px 0px #9E9E9E",
+    boxShadow:"2px 0px 3px 0px #9E9E9E",
     backgroundColor:"white",
 classesolor:"gray",
 height:"43px"
