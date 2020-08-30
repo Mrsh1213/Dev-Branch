@@ -64,7 +64,7 @@ const useStyles = makeStyles({
 
     uploader:
         {
-            width:"100%"
+            width: "100%"
         }
 
 });

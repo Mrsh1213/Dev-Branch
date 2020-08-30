@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import MyEditor from './MyEditor';
 import PostPage from "./PostPage";
+
 function Index() {
     const creatorName = "محمد";
     const content1 = "<p>محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست محتوای اولین پست</p>";
@@ -52,50 +53,48 @@ function Index() {
         ]
     );
 
-    const createComment=(content,title)=>{
-        let post=posts.find(o => o.title === title);
-        post.comments.unshift({creator:"شخص",content:content});
-          setPosts(posts);
+    const createComment = (content, title) => {
+        let post = posts.find(o => o.title === title);
+        post.comments.unshift({creator: "شخص", content: content});
+        setPosts(posts);
 
     }
     const createPost = (title, content, picture) => {
         posts.unshift({
             content: content,
-             title: title,
+            title: title,
             creator: creatorName, picture: picture,
-            comments:[{creator:"ممد",content:"ممدم"}]
+            comments: [{creator: "ممد", content: "ممدم"}]
         });
         setPosts(posts);
     }
 
-    const findObj = (title)=>
-    {
-        let post=posts.find(o => o.title === title);
+    const findObj = (title) => {
+        let post = posts.find(o => o.title === title);
         return post;
-        
+
     }
 
 
     return (<Switch>
-        <Route exact path="/dashboard/project/wikiProject" 
-        component={() => <PostList posts={posts}/>}/>
+        <Route exact path="/dashboard/project/wikiProject"
+               component={() => <PostList posts={posts}/>}/>
 
-        <Route path="/dashboard/project/wikiProject/createPost" 
-        component={() => <MyEditor createPost={createPost}/>}/>
+        <Route path="/dashboard/project/wikiProject/createPost"
+               component={() => <MyEditor createPost={createPost}/>}/>
 
-        <Route path="/dashboard/project/wikiProject/post/:title" 
-        children={<Child findObj={findObj} createComment={createComment}/>}
+        <Route path="/dashboard/project/wikiProject/post/:title"
+               children={<Child findObj={findObj} createComment={createComment}/>}
         />
 
     </Switch>)
 }
 
-function Child(props)
-{
-    const {findObj,createComment}=props;
-    let {title}=useParams();
-    let post=findObj(title);
-    return <PostPage createComment={createComment} post={post} />;
+function Child(props) {
+    const {findObj, createComment} = props;
+    let {title} = useParams();
+    let post = findObj(title);
+    return <PostPage createComment={createComment} post={post}/>;
 
 }
 

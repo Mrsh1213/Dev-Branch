@@ -16,9 +16,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35f9419e-b680-4afc-84ed-adce0b2b9842" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_______Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_۲۰۲۰_۸_۱۷،‏_۱۱_۱۶_[Default_Changelist]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Posts/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/Comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Posts/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/PostList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Posts/PostPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/PostPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Posts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +49,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/Posts" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -64,6 +69,7 @@
       <workItem from="1597310073571" duration="176000" />
       <workItem from="1597743988631" duration="33000" />
       <workItem from="1597767957706" duration="3278000" />
+      <workItem from="1598802860951" duration="3212000" />
     </task>
     <servers />
   </component>
@@ -91,10 +97,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1597646653462" />
-    <state x="205" y="31" key="SettingsEditor" timestamp="1597744050056">
+    <state x="205" y="31" key="SettingsEditor" timestamp="1598803481959">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="205" y="31" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1597744050056" />
+    <state x="205" y="31" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1598803481959" />
     <state x="559" y="298" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597768028138">
       <screen x="67" y="27" width="1299" height="741" />
     </state>

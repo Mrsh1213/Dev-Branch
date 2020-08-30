@@ -19,14 +19,14 @@ import CommentIcon from '@material-ui/icons/Comment';
 
 const useStyles = makeStyles({
     root: {
-        width:"100%",
-        margin:"-5px 0 0 0",
-        float:"left",
+        width: "100%",
+        margin: "-5px 0 0 0",
+        float: "left",
         borderTopWidth: 0,
         // borderStyle: 'solid',
-        borderBottom:"0px",
-        borderRight:"0px",
-        borderLeft:"0px",
+        borderBottom: "0px",
+        borderRight: "0px",
+        borderLeft: "0px",
     },
     // media: {
     //     height: 0,
@@ -52,7 +52,7 @@ const useStyles = makeStyles({
             margin: "-40px 0 0 0",
             color: "black",
             fontWeight: "300",
-            fontSize:"16px"
+            fontSize: "16px"
         },
     title:
         {
@@ -71,7 +71,7 @@ const useStyles = makeStyles({
     //     },
     actionsList:
         {
-             margin: "-30px 0px -9px -5px",
+            margin: "-30px 0px -9px -5px",
         },
 
 });
@@ -83,40 +83,38 @@ function Comment(props) {
     var parse = require('html-react-parser');
 
 
-
-
     return (
-    <Grid>
-         <Card variant="outlined" key={content} className={classes.root}>
-         
-            <CardHeader
-                classes={{
-                    title: classes.title,
+        <Grid>
+            <Card variant="outlined" key={content} className={classes.root}>
 
-                }}
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                    </Avatar>
-                }
-                title={creator}
+                <CardHeader
+                    classes={{
+                        title: classes.title,
+
+                    }}
+                    avatar={
+                        <Avatar aria-label="recipe" className={classes.avatar}>
+                        </Avatar>
+                    }
+                    title={creator}
 
 
-            />
-            <CardContent xs={12} className={classes.content}>
-                <div dangerouslySetInnerHTML={{
-                    __html: content
-                }} color="textSecondary" component="p">
-                </div>
-            </CardContent>
-            <CardActions className={classes.actionsList} disableSpacing>
-                <IconButton  aria-label="add to favorites">
-                    <FavoriteBorderOutlinedIcon style={{ fontSize: 20 }}/>
-                </IconButton>
-              
-            </CardActions>
+                />
+                <CardContent xs={12} className={classes.content}>
+                    <div dangerouslySetInnerHTML={{
+                        __html: content
+                    }} color="textSecondary" component="p">
+                    </div>
+                </CardContent>
+                <CardActions className={classes.actionsList} disableSpacing>
+                    <IconButton aria-label="add to favorites">
+                        <FavoriteBorderOutlinedIcon style={{fontSize: 20}}/>
+                    </IconButton>
 
-         </Card>
-    </Grid>
+                </CardActions>
+
+            </Card>
+        </Grid>
 
 
     );

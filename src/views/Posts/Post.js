@@ -21,20 +21,21 @@ import PostPage from "./PostPage";
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
 import {useHistory} from "react-router";
+
 const useStyles = makeStyles((theme) => ({
 
 
     root: {
         margin: "0px 0 0 0",
-        width:"99%",
-        float:"right",
-        marginRight:"2px",
-        borderBottomWidth:2,
+        width: "99%",
+        float: "right",
+        marginRight: "2px",
+        borderBottomWidth: 2,
         borderTopWidth: 0,
         borderStyle: 'solid',
-        borderRight:"0px",
-        borderLeft:"0px",
-      
+        borderRight: "0px",
+        borderLeft: "0px",
+
 
     },
     media: {
@@ -86,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
             margin: "-39px 0px 0 -5px",
         },
 
-   
+
 }));
 
 function Post(props) {
@@ -108,7 +109,7 @@ function Post(props) {
         />;
     }
 
-    let postLink="/dashboard/project/wikiProject/post/";
+    let postLink = "/dashboard/project/wikiProject/post/";
 
     return (
         <Card variant="outlined" key={title} className={classes.root}>
@@ -136,22 +137,22 @@ function Post(props) {
             </CardContent>
             <CardActions className={classes.actionsList} disableSpacing>
                 <IconButton aria-label="add to favorites">
-                    <FavoriteBorderOutlinedIcon style={{ fontSize: 25 }}/>
+                    <FavoriteBorderOutlinedIcon style={{fontSize: 25}}/>
                 </IconButton>
                 <IconButton aria-label="share">
-                    <ShareIcon style={{ fontSize: 25 }}/>
+                    <ShareIcon style={{fontSize: 25}}/>
                 </IconButton>
 
                 <IconButton
-                   
-                    onClick={()=>history.push("/dashboard/project/wikiProject/post/"+title)}
-                   
-                 
+
+                    onClick={() => history.push("/dashboard/project/wikiProject/post/" + title)}
+
+
                 >
-                    <MessageOutlinedIcon style={{ fontSize: 25 }}/>
+                    <MessageOutlinedIcon style={{fontSize: 25}}/>
                 </IconButton>
             </CardActions>
-           
+
         </Card>
 
     );
