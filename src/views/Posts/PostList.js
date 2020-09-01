@@ -72,7 +72,7 @@ const useStyles = makeStyles({
 
 
 function PostsList(props) {
-    const {posts} = props;
+    const {posts } = props;
     const classes = useStyles();
     const history = useHistory();
 
@@ -82,8 +82,8 @@ function PostsList(props) {
 
             {posts.map(post => {
                 return (<Grid className={classes.postClass} key={post.title} item xs={12} lg={3}>
-                    <Post title={post.title} creator={post.creator}
-                          content={post.content} picture={post.picture}/>
+                    <Post  title={post.title} creator={post.creator}
+                          content={post.content} picture={post.picture} ispostpage={false} handleOpen={null}/>
                 </Grid>)
             })}
 

@@ -17,10 +17,14 @@ import MessageIcon from '@material-ui/icons/Message';
 import Grid from "@material-ui/core/Grid";
 import Comment from "./Comment";
 import PostPage from "./PostPage";
-
+import TextField from '@material-ui/core/TextField';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
 import {useHistory} from "react-router";
+import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
+
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -90,15 +94,38 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+
+
+
+
+
 function Post(props) {
     const classes = useStyles();
-    const {content, title, creator, picture} = props;
+    const {content, title, creator, picture , createComment , ispostpage, handleOpen} = props;
     const history = useHistory();
 
+ 
+
+     
 
     var parse = require('html-react-parser');
 
+    let messageIcon=<IconButton
 
+                    onClick={() => history.push("/dashboard/project/wikiProject/post/" + title)}
+
+
+                >
+                    <MessageOutlinedIcon style={{fontSize: 25}}/>
+                </IconButton>;
+
+    if (ispostpage===true)
+    {
+        messageIcon=<IconButton
+                    onClick={()=>handleOpen()} >
+                    <MessageOutlinedIcon style={{fontSize: 25}}/>
+                </IconButton>
+    }            
     let media = null;
     if (picture) {
         media = <CardMedia
@@ -143,14 +170,7 @@ function Post(props) {
                     <ShareIcon style={{fontSize: 25}}/>
                 </IconButton>
 
-                <IconButton
-
-                    onClick={() => history.push("/dashboard/project/wikiProject/post/" + title)}
-
-
-                >
-                    <MessageOutlinedIcon style={{fontSize: 25}}/>
-                </IconButton>
+                {messageIcon}
             </CardActions>
 
         </Card>

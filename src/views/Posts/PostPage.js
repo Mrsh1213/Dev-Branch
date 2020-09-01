@@ -17,26 +17,69 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MessageIcon from '@material-ui/icons/Message';
 import Grid from "@material-ui/core/Grid";
 import Comment from "./Comment";
+import Post from "./Post";
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
 import {useHistory} from "react-router";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
-import Button from '@material-ui/core/Button';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import TextField from '@material-ui/core/TextField';
 import Modal from '@material-ui/core/Modal';
+import CommentsList from './CommentsList';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
+    commentFormClass:
+        {
+            width: "95%",
+            float: "right",
+            marginRight: "8px",
+            padding: "10px 0px 0px 0px"
 
+        },
+paper: {
+        float: "right",
+        width: "90%",
+        margin: "200px 20px 0px  0",
+        backgroundColor: "white",
+        border: '0px solid #000',
+        // boxShadow: theme.shadows[5],
+        // padding: theme.spacing(2, 4, 3),
+    },
+        modalClass:
+        {},
+    buttonsClass:
+        {
+            width: "95%",
+            float: "right",
+            marginRight: "8px",
+            padding: "10px 0px"
+        },
+    confirmClass:
+        {
+            float: "right",
+            width: "60%",
+            backgroundColor: "#2E6E8E",
+            fontWeight: "600",
+            color: "white"
+
+        },
+    closeClass:
+        {
+            float: "left",
+            width: "25%",
+            fontWeight: "600",
+
+        },
 
     root: {
-        margin: "44px 0 0 0",
+        margin: "30px 0 0 0",
         width: "99%",
         float: "right",
         marginRight: "2px",
@@ -60,14 +103,7 @@ const useStyles = makeStyles((theme) => ({
         height: "50px",
 
     },
-    commentFormClass:
-        {
-            width: "95%",
-            float: "right",
-            marginRight: "8px",
-            padding: "10px 0px 0px 0px"
-
-        },
+    
     content:
         {
             margin: "-30px 0 0 0",
@@ -113,6 +149,7 @@ const useStyles = makeStyles((theme) => ({
             fontFamily: "IRANSans"
 
         },
+   
     actionsList:
         {
             margin: "-39px 0px -20px -5px",
@@ -128,46 +165,15 @@ const useStyles = makeStyles((theme) => ({
             height: "25px",
 
         },
-    paper: {
-        float: "right",
-        width: "90%",
-        margin: "200px 20px 0px  0",
-        backgroundColor: "white",
-        border: '0px solid #000',
-        // boxShadow: theme.shadows[5],
-        // padding: theme.spacing(2, 4, 3),
-    },
+    
     wikiClass:
         {
-            fontSize: "15.3px",
-            fontWeight: "600",
-            padding: "12px 10px 8px 0"
-        },
-    modalClass:
-        {},
-    buttonsClass:
-        {
-            width: "95%",
-            float: "right",
-            marginRight: "8px",
-            padding: "10px 0px"
-        },
-    confirmClass:
-        {
-            float: "right",
-            width: "60%",
-            backgroundColor: "#2E6E8E",
-            fontWeight: "600",
-            color: "white"
 
-        },
-    closeClass:
-        {
-            float: "left",
-            width: "25%",
+            fontSize: "15px",
             fontWeight: "600",
+            padding: "12px 0 8px 6px"
+        },
 
-        }
 }));
 
 
@@ -187,6 +193,7 @@ function PostPage(props) {
     const classes = useStyles();
     const {post, createComment} = props;
     const history = useHistory();
+
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
     const [commentContent, setCommentContent] = React.useState("");
@@ -198,6 +205,8 @@ function PostPage(props) {
     const handleClose = () => {
         setOpen(false);
     };
+
+    var parse = require('html-react-parser');
 
     const body = (
         <div className={classes.paper}>
@@ -221,18 +230,6 @@ function PostPage(props) {
         </div>
     );
 
-    var parse = require('html-react-parser');
-
-
-    let media = null;
-    if (post.picture) {
-        media = <CardMedia
-            className={classes.media}
-            image="https://picsum.photos/200"
-            title="تصویر"
-
-        />;
-    }
 
 
     return (
@@ -251,64 +248,24 @@ function PostPage(props) {
             </AppBar>
 
 
-            <Card variant="outlined" key={post.title} className={classes.root}>
-
-                <CardHeader
-                    classes={{
-                        title: classes.title,
-                        subheader: classes.subheader
-                    }}
-                    avatar={
-                        <Avatar aria-label="recipe" className={classes.avatar}>
-                        </Avatar>
-                    }
-                    title={post.title}
-
-                    subheader={post.creator}
-                />
-
-                <CardContent xs={12} className={classes.content}>
-                    {media}
-                    <div dangerouslySetInnerHTML={{
-                        __html: post.content
-                    }} color="textSecondary" component="p">
-                    </div>
-                </CardContent>
-                <CardActions className={classes.actionsList} disableSpacing>
-                    <IconButton aria-label="add to favorites">
-                        <FavoriteBorderOutlinedIcon style={{fontSize: 25}}/>
-                    </IconButton>
-                    <IconButton aria-label="share">
-                        <ShareIcon style={{fontSize: 25}}/>
-                    </IconButton>
-                    <IconButton onClick={handleOpen}>
-                        <MessageOutlinedIcon style={{fontSize: 25}}/>
-                    </IconButton>
-                </CardActions>
-
-                <hr color="#D7D1CF"/>
+      <Grid className={classes.root} key={post.title} item xs={12} lg={3}>
+                    <Post handleOpen={handleOpen} createComment={createComment} title={post.title} creator={post.creator}
+                          content={post.content} picture={post.picture} ispostpage={true}/>
+                </Grid>
+                
+       <hr  color="#D7D1CF"/>
+            <CommentsList comments={post.comments} />
 
 
-                {post.comments.map(comment => {
-                    return (
-                        <Grid item xs={12} key={comment.content}>
-                            <Comment content={comment.content} creator={comment.creator}/>
-                        </Grid>
+        <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
 
-
-                    )
-                })}
-
-
-            </Card>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description"
-            >
-                {body}
-            </Modal>
         </Fragment>
 
     );

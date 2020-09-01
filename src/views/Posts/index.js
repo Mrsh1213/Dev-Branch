@@ -57,6 +57,7 @@ function Index() {
         let post = posts.find(o => o.title === title);
         post.comments.unshift({creator: "شخص", content: content});
         setPosts(posts);
+      
 
     }
     const createPost = (title, content, picture) => {
@@ -91,10 +92,10 @@ function Index() {
 }
 
 function Child(props) {
-    const {findObj, createComment} = props;
+    const {findObj,createComment} = props;
     let {title} = useParams();
     let post = findObj(title);
-    return <PostPage createComment={createComment} post={post}/>;
+    return <PostPage  createComment={createComment} post={post}/>;
 
 }
 

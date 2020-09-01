@@ -15,17 +15,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35f9419e-b680-4afc-84ed-adce0b2b9842" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_______Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_۲۰۲۰_۸_۱۷،‏_۱۱_۱۶_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/Comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/PostList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/PostPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/PostPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="35f9419e-b680-4afc-84ed-adce0b2b9842" name="Default Changelist" comment="code reformatted" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,8 +59,16 @@
       <workItem from="1597310073571" duration="176000" />
       <workItem from="1597743988631" duration="33000" />
       <workItem from="1597767957706" duration="3278000" />
-      <workItem from="1598802860951" duration="3212000" />
+      <workItem from="1598802860951" duration="3846000" />
     </task>
+    <task id="LOCAL-00001" summary="code reformatted">
+      <created>1598814973445</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598814973445</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +85,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="code reformatted" />
+    <option name="LAST_COMMIT_MESSAGE" value="code reformatted" />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597310206102">
