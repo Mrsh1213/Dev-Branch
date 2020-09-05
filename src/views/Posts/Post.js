@@ -9,28 +9,54 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+import Collapse from '@material-ui/core/Collapse';
+import clsx from 'clsx';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MessageIcon from '@material-ui/icons/Message';
+import Grid from "@material-ui/core/Grid";
+import Comment from "./Comment";
+import PostPage from "./PostPage";
+import TextField from '@material-ui/core/TextField';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
+import {useHistory} from "react-router";
+import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
+
 
 
 const useStyles = makeStyles((theme) => ({
 
 
     root: {
-        margin: "-6px 0 0 0",
-        zIndex: 10
+        margin: "0px 0 0 0",
+        width: "99%",
+        float: "right",
+        marginRight: "2px",
+        borderBottomWidth: 2,
+        borderTopWidth: 0,
+        borderStyle: 'solid',
+        borderRight: "0px",
+        borderLeft: "0px",
+
 
     },
     media: {
-        height: 0,
-        paddingTop: '60%',
-        margin: "-6.5px 10px 20px 10px", // 16:9
+        paddingTop: '100%',
+        margin: "7.5px 0px 7.5px 0px", // 16:9
     },
     avatar: {
         backgroundColor: "#B3AFAF",
-        margin: "-10px -10px 0 0",
+        margin: "-10px 0px 0 0",
         width: "50px",
         height: "50px",
 
     },
+    // cardContentClass:
+    //     {
+    //       width:"100%"
+    //     },
     content:
         {
             margin: "-30px 0 0 0",
@@ -49,40 +75,57 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "16px",
             fontStyle: "bold",
             fontWeight: "450",
-            margin: "-8.5px 0px 0 0",
+            margin: "-8.5px 0px 0 -8px",
             fontFamily: "IRANSans"
 
         },
     subheader:
         {
             fontSize: "16px",
-            margin: "-3.5px 0px 0 0",
+            margin: "-3.5px 0px 0 -8px",
             fontFamily: "IRANSans"
 
         },
     actionsList:
         {
-            margin: "-42px -5px 0 0",
+            margin: "-39px 0px 0 -5px",
         },
 
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
+
 }));
+
+
+
+
+
 
 function Post(props) {
     const classes = useStyles();
-    const {content, title, creator, picture} = props;
+    const {content, title, creator, picture , createComment , ispostpage, handleOpen} = props;
+    const history = useHistory();
+
+ 
+
+     
+
     var parse = require('html-react-parser');
 
+    let messageIcon=<IconButton
 
+                    onClick={() => history.push("/dashboard/project/wikiProject/post/" + title)}
+
+
+                >
+                    <MessageOutlinedIcon style={{fontSize: 25}}/>
+                </IconButton>;
+
+    if (ispostpage===true)
+    {
+        messageIcon=<IconButton
+                    onClick={()=>handleOpen()} >
+                    <MessageOutlinedIcon style={{fontSize: 25}}/>
+                </IconButton>
+    }            
     let media = null;
     if (picture) {
         media = <CardMedia
@@ -93,9 +136,10 @@ function Post(props) {
         />;
     }
 
+    let postLink = "/dashboard/project/wikiProject/post/";
 
     return (
-        <Card key={title} className={classes.root}>
+        <Card variant="outlined" key={title} className={classes.root}>
 
             <CardHeader
                 classes={{
@@ -110,8 +154,9 @@ function Post(props) {
 
                 subheader={creator}
             />
-            {media}
+
             <CardContent xs={12} className={classes.content}>
+                {media}
                 <div dangerouslySetInnerHTML={{
                     __html: content
                 }} color="textSecondary" component="p">
@@ -119,12 +164,15 @@ function Post(props) {
             </CardContent>
             <CardActions className={classes.actionsList} disableSpacing>
                 <IconButton aria-label="add to favorites">
-                    <FavoriteIcon/>
+                    <FavoriteBorderOutlinedIcon style={{fontSize: 25}}/>
                 </IconButton>
                 <IconButton aria-label="share">
-                    <ShareIcon/>
+                    <ShareIcon style={{fontSize: 25}}/>
                 </IconButton>
+
+                {messageIcon}
             </CardActions>
+
         </Card>
 
     );

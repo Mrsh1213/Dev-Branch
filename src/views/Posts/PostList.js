@@ -72,23 +72,23 @@ const useStyles = makeStyles({
 
 
 function PostsList(props) {
-    const {posts} = props;
+    const {posts } = props;
     const classes = useStyles();
     const history = useHistory();
 
 
     return (
-        <Grid justify={"flex-end"} container>
+        <Grid justify={"flex-end"} container direction="row">
 
             {posts.map(post => {
                 return (<Grid className={classes.postClass} key={post.title} item xs={12} lg={3}>
-                    <Post title={post.title} creator={post.creator}
-                          content={post.content} picture={post.picture}/>
+                    <Post  title={post.title} creator={post.creator}
+                          content={post.content} picture={post.picture} ispostpage={false} handleOpen={null}/>
                 </Grid>)
             })}
 
 
-            <Grid direction={"row-reverse"} className={classes.footer} item>
+            <Grid className={classes.footer} item>
 
                 <Fab onClick={() => history.push("/dashboard/project/wikiProject/createPost")} color="secondary"
                      aria-label="add" className={classes.fabButton}>
