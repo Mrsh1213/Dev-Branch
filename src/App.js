@@ -8,6 +8,7 @@ import {SnackbarProvider} from "notistack";
 import {Alarm} from "@material-ui/icons";
 import "./assets/css/anim.css";
 import Demo from "./views/Dashboard/Demo";
+import GroupChat from "./views/groupChat";
 import PostPage from "./views/Posts";
 
 
@@ -43,7 +44,7 @@ export default function App() {
             <Router>
                 <Route exact path={"/demo"} component={Demo}/>
                 <Route path={"/dashboard/project/wikiProject"} component={PostPage}/>
-
+                <Route path={"/groupChat"} component={GroupChat}/>
             </Router>
         </SnackbarProvider>
 

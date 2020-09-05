@@ -19,19 +19,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35f9419e-b680-4afc-84ed-adce0b2b9842" name="Default Changelist" comment="">
+    <list default="true" id="35f9419e-b680-4afc-84ed-adce0b2b9842" name="changed" comment="implement the ui of chat page &#10;WARNING: this commit has responsive problem and should not be used">
+      <change afterPath="$PROJECT_DIR$/src/views/groupChat/HeadGroupChat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/groupChat/InputMessage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/groupChat/Message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/groupChat/MessageList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/groupChat/Time.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/groupChat/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/MyEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/PostList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Posts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Posts/index.js" afterDir="false" />
     </list>
+    <list id="1207206b-c3bd-42f6-a55a-04b218374480" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,37 +57,45 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/Posts" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/874lmqmwcmfsydxe" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\m.shabiri\Desktop\Dev-Branch\src\views\Posts" />
     </key>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/views" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="30f2382b-7dea-4857-997b-fa23de20cce5" name="Default Changelist" comment="" />
+      <changelist id="35f9419e-b680-4afc-84ed-adce0b2b9842" name="Default Changelist" comment="" />
+      <changelist id="1207206b-c3bd-42f6-a55a-04b218374480" name="ignore" comment="" />
       <created>1597310069303</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597310069303</updated>
       <workItem from="1597310073571" duration="176000" />
+      <workItem from="1597648052840" duration="18111000" />
+      <workItem from="1597824471354" duration="20857000" />
+      <workItem from="1597907125177" duration="25896000" />
+      <workItem from="1598425996064" duration="20906000" />
+      <workItem from="1598466216939" duration="8856000" />
+      <workItem from="1598513976662" duration="1703000" />
+      <workItem from="1598598475738" duration="18521000" />
+      <workItem from="1599209251504" duration="3628000" />
+      <workItem from="1599327679390" duration="1960000" />
     </task>
     <servers />
   </component>
@@ -89,22 +108,79 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
             </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implement the ui of chat page &#10;WARNING: this commit has responsive problem and should not be used" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement the ui of chat page &#10;WARNING: this commit has responsive problem and should not be used" />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597310206102">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1597310206102" />
+    <state x="697" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598606120695">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="697" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1598606120695" />
     <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1597646653462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1597646653462" />
+    <state x="742" y="264" key="FileChooserDialogImpl" timestamp="1599214508219">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="742" y="264" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1599214508219" />
+    <state width="1897" height="278" key="GridCell.Tab.0.bottom" timestamp="1597669119918">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1597669119918" />
+    <state width="1897" height="278" key="GridCell.Tab.0.center" timestamp="1597669119918">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1597669119918" />
+    <state width="1897" height="278" key="GridCell.Tab.0.left" timestamp="1597669119917">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1597669119917" />
+    <state width="1897" height="278" key="GridCell.Tab.0.right" timestamp="1597669119918">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1897" height="278" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1597669119918" />
+    <state x="460" y="157" key="SettingsEditor" timestamp="1597657889329">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="460" y="157" key="SettingsEditor/0.0.1920.1044@0.0.1920.1044" timestamp="1597657889329" />
+    <state x="811" y="438" key="VCS.ChangelistChooser" timestamp="1597648500376">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="811" y="438" key="VCS.ChangelistChooser/0.0.1920.1044@0.0.1920.1044" timestamp="1597648500376" />
+    <state x="844" y="438" key="VCS.EditChangelistDialog" timestamp="1597648476280">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="844" y="438" key="VCS.EditChangelistDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1597648476280" />
+    <state x="566" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598617944649">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="566" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1044@0.0.1920.1044" timestamp="1598617944649" />
+    <state x="757" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597648608508">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="757" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1044@0.0.1920.1044" timestamp="1597648608508" />
+    <state x="623" y="238" key="run.anything.popup" timestamp="1597936757294">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="623" y="238" key="run.anything.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1597936757294" />
     <state x="379" y="89" key="search.everywhere.popup" timestamp="1597310138285">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
